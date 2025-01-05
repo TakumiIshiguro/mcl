@@ -77,6 +77,9 @@ class IdealRobot:
         elems += ax.plot(self.poses, [0] * len(self.poses), linewidth=0.5, color="black")
         if self.sensor and len(self.poses) > 1:
             self.sensor.draw(ax, elems, self.poses[-2])
+        if self.agent and hasattr(self.agent, "draw"):                               #以下2行追加   
+            self.agent.draw(ax, elems)
+            
     @classmethod
     def state_transition(cls, nu, time, x):
         return x + nu * time
