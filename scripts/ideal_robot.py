@@ -30,7 +30,7 @@ class World:
         fig = plt.figure(figsize=(8, 2))
         ax = fig.add_subplot(111)
         ax.set_aspect('auto')
-        ax.set_xlim(-5, 5)
+        ax.set_xlim(-6, 6)
         ax.set_ylim(-1, 1)  # 1次元なのでy軸は固定
         ax.set_xlabel("X", fontsize=10)
         ax.set_yticks([])  # y軸のラベルを非表示に
@@ -136,7 +136,7 @@ class Map:
 
 
 class IdealCamera:          
-    def __init__(self, env_map, distance_range=(0.1, 1.0)):
+    def __init__(self, env_map, distance_range=(0.5, 2.5)):
         self.map = env_map
         self.lastdata = []     
         self.distance_range = distance_range

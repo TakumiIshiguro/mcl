@@ -83,7 +83,7 @@ class Robot(IdealRobot):
 
 
 class Camera(IdealCamera):
-    def __init__(self, env_map, distance_range=(0.1, 2.0),
+    def __init__(self, env_map, distance_range=(0.5, 2.5),
                  distance_noise_rate=0.1, distance_bias_rate_stddev=0.1,
                  phantom_prob=0.0, phantom_range=(-5.0, 5.0),
                  oversight_prob=0.1, occlusion_prob=0.0):
