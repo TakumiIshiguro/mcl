@@ -2,6 +2,8 @@
 このレポジトリはモンテカルロ位置推定（Monte Carlo Localization）を１次元の数直線上に実装したものです。
 
 ## デモ
+<img src="resource/mcl.gif">
+黒丸 : ロボット, 青矢印 : パーティクル, ピンク線 : 観測の表現, 黄星 : ランドマーク
 
 ## 内容
 #### mcl の実装
@@ -17,7 +19,7 @@
 
 * 準備 : [particle_test.ipynb](https://github.com/TakumiIshiguro/mcl/blob/main/mcl/particle_test.ipynb)
 * 移動後の更新 : [particle_move.ipynb](https://github.com/TakumiIshiguro/mcl/blob/main/mcl/particle_move.ipynb)
-* 重みの付与, 尤度関数の実装: [particle_weight.ipynb](https://github.com/TakumiIshiguro/mcl/blob/main/mcl/particle_weight.ipynb)
+* 重みの付与, 尤度関数の実装 : [particle_weight.ipynb](https://github.com/TakumiIshiguro/mcl/blob/main/mcl/particle_weight.ipynb)
 
 ## 動作確認済み環境
 * Jupyter Notebook : 6.5.4  

@@ -31,9 +31,10 @@ class World:
         ax = fig.add_subplot(111)
         ax.set_aspect('auto')
         ax.set_xlim(-6, 6)
-        ax.set_ylim(-1, 1)  # 1次元なのでy軸は固定
+        ax.set_ylim(-1, 1) 
         ax.set_xlabel("X", fontsize=10)
-        ax.set_yticks([])  # y軸のラベルを非表示に
+        ax.set_yticks([])  
+        ax.axhline(y=0, color='gray', linestyle='--', linewidth=0.8)
 
         elems = []
 
@@ -64,20 +65,20 @@ class World:
 
 class IdealRobot:   
     def __init__(self, pose, agent=None, sensor=None, color="black"):
-        self.pose = pose  # Only x-coordinate
+        self.pose = pose  
         self.color = color 
         self.agent = agent
         self.poses = [pose]
         self.sensor = sensor
 
     def draw(self, ax, elems):
-        x = self.pose  # 1D position
+        x = self.pose  
         elems += ax.plot(x, 0, marker="o", color=self.color, markersize=10)
         self.poses.append(self.pose)
         elems += ax.plot(self.poses, [0] * len(self.poses), linewidth=0.5, color="black")
         if self.sensor and len(self.poses) > 1:
             self.sensor.draw(ax, elems, self.poses[-2])
-        if self.agent and hasattr(self.agent, "draw"):                               #以下2行追加   
+        if self.agent and hasattr(self.agent, "draw"):                 
             self.agent.draw(ax, elems)
             
     @classmethod
